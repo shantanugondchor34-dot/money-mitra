@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Money Mitra</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span id="liveRates">🔄 Loading Live Currency Rates...</span>
+            <span>📢 UPDATE: New Tax Regime Default for FY 25-26</span>
+            <span>📈 MARKET: Nifty touches all-time high of 26,000</span>
+        </div>
+    </div>
+
+    <nav>
+        <div class="brand">🇮🇳 Money Mitra</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="tools.html">Calculators</a>
+            <a href="tracker.html">Tracker</a>
+            <a href="quiz.html">Quiz</a>
+        </div>
+        <button id="themeToggle" style="width: auto; margin:0; padding: 8px 16px; font-size: 1.2rem; background: transparent; color: var(--text);">🌓</button>
+    </nav>
+
+    <div class="container">
+        
+        <div class="hero">
+            <h1>Master Your Money.</h1>
+            <p>Your one-stop destination for Tax Updates, SIP Calculations, and Financial Literacy in India.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>📢 <span>Latest Updates</span></h3>
+                <div class="news-item">
+                    <span class="tag">TAX</span> 
+                    <div>New Standard Deduction is ₹75,000 for FY25.</div>
+                </div>
+                <div class="news-item">
+                    <span class="tag">BANK</span> 
+                    <div>RBI keeps Repo Rate unchanged at 6.5%.</div>
+                </div>
+                <div class="news-item">
+                    <span class="tag">IPO</span> 
+                    <div>Upcoming Tata Tech IPO details inside.</div>
+                </div>
+                <button class="secondary" onclick="window.location.href='tools.html'">Check Tax Tools &rarr;</button>
+            </div>
+
+            <div class="card">
+                <h3>📊 <span>Budget Breakdown</span></h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+                    Where does every ₹1 of the Union Budget go?
+                </p>
+                <div style="position: relative; height: 250px;">
+                    <canvas id="budgetChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card full-width" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; background: linear-gradient(135deg, rgba(9, 132, 227, 0.1), rgba(0, 206, 201, 0.1)); border: none;">
+                <div style="flex: 1;">
+                    <h3 style="margin-bottom: 10px;">🚀 Start Your Wealth Journey</h3>
+                    <p style="color: var(--text-muted);">
+                        Don't just save, invest! Use our <b>SIP Calculator</b> to see how small monthly savings can turn into Crores over time.
+                    </p>
+                    <button onclick="window.location.href='tools.html'" style="width: auto; padding-left: 30px; padding-right: 30px;">Try Calculator</button>
+                </div>
+                <div style="font-size: 5rem; opacity: 0.8;">
+                    🌱
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

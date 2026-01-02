@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculators | Money Mitra</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">🇮🇳 Money Mitra</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tools.html" class="active">Calculators</a>
+            <a href="tracker.html">Tracker</a>
+            <a href="quiz.html">Quiz</a>
+        </div>
+        <button id="themeToggle" style="width:auto; margin:0;">🌓</button>
+    </nav>
+
+    <div class="container grid">
+        <div class="card full-width" style="display:flex; gap:20px; flex-wrap:wrap;">
+            <div style="flex:1;">
+                <h3>🌱 SIP Wealth Calculator</h3>
+                <label>Monthly Inv (₹)</label><input type="number" id="sipAmount" value="5000">
+                <label>Return (%)</label><input type="number" id="sipRate" value="12">
+                <label>Years</label><input type="number" id="sipYears" value="10">
+                <button onclick="calculateSIP()">Calculate</button>
+                <div class="result-box" id="sipResult">₹0</div>
+            </div>
+            <div style="flex:1; max-width:400px;"><canvas id="sipChart"></canvas></div>
+        </div>
+
+        <div class="card">
+            <h3>🧮 EMI Calculator</h3>
+            <label>Loan (₹)</label><input type="number" id="loanP" value="500000">
+            <label>Rate (%)</label><input type="number" id="loanR" value="9">
+            <label>Months</label><input type="number" id="loanN" value="60">
+            <button onclick="calculateEMI()">Calculate</button>
+            <div class="result-box" id="emiResult">₹0</div>
+        </div>
+
+        <div class="card">
+            <h3>⚖️ Tax Comparison</h3>
+            <label>Annual Income (₹)</label><input type="number" id="income" value="1000000">
+            <button onclick="compareTax()" style="background:var(--highlight)">Compare</button>
+            <div class="result-box" id="taxResult" style="font-size:1rem;">Result will appear here</div>
+        </div>
+    </div>
+</body>
+</html>

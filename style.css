@@ -1,0 +1,321 @@
+/* style.css - 2025 Professional Edition */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg: #f0f2f5;
+    --card: #ffffff;
+    --text: #2d3436;
+    --text-muted: #636e72;
+    --primary: #0984e3; /* Electric Blue */
+    --accent: #00cec9;  /* Teal */
+    --gradient: linear-gradient(135deg, #0984e3, #00cec9);
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --border: #dfe6e9;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --success: #00b894;
+    --danger: #d63031;
+}
+
+[data-theme='dark'] {
+    --bg: #1e1e2e;
+    --card: #2d2d44;
+    --text: #dfe6e9;
+    --text-muted: #b2bec3;
+    --primary: #74b9ff;
+    --nav-bg: rgba(45, 45, 68, 0.85);
+    --border: #404058;
+    --shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    transition: background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Glassmorphism Navbar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px); /* The Blur Effect */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient Text */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background: var(--gradient);
+    transition: width 0.3s;
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+/* --- Modern Layout --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* --- Floating Cards --- */
+.card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px); /* Moves up slightly */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.full-width { grid-column: 1 / -1; }
+
+/* --- Headings & Elements --- */
+h2, h3 {
+    color: var(--text);
+    margin-top: 0;
+    font-weight: 700;
+}
+
+h3 span { color: var(--primary); }
+
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 2px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+    font-weight: 500;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--card);
+}
+
+/* --- Gradient Buttons --- */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+    background: var(--gradient);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+button.secondary { background: #636e72; }
+button.danger { background: var(--danger); }
+
+/* --- Ticker --- */
+.ticker-wrap {
+    background: var(--text);
+    color: #fff;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.85rem;
+}
+.ticker { display: inline-block; animation: scroll 40s linear infinite; }
+.ticker span { margin-right: 50px; opacity: 0.9; }
+
+/* --- Hero Section (New) --- */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--card);
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    background-image: radial-gradient(circle at 10% 20%, rgba(9, 132, 227, 0.05) 0%, transparent 20%);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 15px auto 0; }
+
+/* --- Specifics --- */
+.tag {
+    background: rgba(9, 132, 227, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-right: 12px;
+}
+.news-item { padding: 15px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; }
+.result-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: var(--bg);
+    border-left: 5px solid var(--accent);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text);
+}
+
+/* --- QUIZ SPECIFIC STYLES --- */
+
+/* Header Layout */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: var(--border);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient);
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+/* Question Typography */
+.question-text {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Options Grid (2x2 Layout) */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 600px) {
+    .options-grid { grid-template-columns: 1fr; } /* Stack on mobile */
+}
+
+/* Option Buttons */
+.quiz-opt-btn {
+    background: var(--bg);
+    border: 2px solid var(--border);
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    text-align: left;
+    color: var(--text);
+    position: relative;
+}
+
+.quiz-opt-btn:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* States */
+.quiz-opt-btn.correct {
+    background: rgba(0, 184, 148, 0.15);
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.quiz-opt-btn.wrong {
+    background: rgba(214, 48, 49, 0.15);
+    border-color: var(--danger);
+    color: var(--danger);
+    opacity: 0.7;
+}
+
+.quiz-opt-btn.disabled {
+    pointer-events: none;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

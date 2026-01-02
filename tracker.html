@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Tracker | Money Mitra</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">🇮🇳 Money Mitra</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tools.html">Calculators</a>
+            <a href="tracker.html" class="active">Tracker</a>
+            <a href="quiz.html">Quiz</a>
+        </div>
+        <button id="themeToggle" style="width:auto; margin:0;">🌓</button>
+    </nav>
+
+    <div class="container">
+        <div class="card" style="max-width:600px; margin:auto;">
+            <h3>📝 My Expenses</h3>
+            <div style="display:flex; gap:10px;">
+                <input type="text" id="desc" placeholder="Spent on...">
+                <input type="number" id="amount" placeholder="₹">
+            </div>
+            <button onclick="addExpense()">Add</button>
+            
+            <ul id="expenseList" style="list-style:none; padding:0; margin-top:20px;"></ul>
+            
+            <h3 style="text-align:right;">Total: <span id="totalExpense">₹0</span></h3>
+            <button onclick="clearExpenses()" style="background:var(--danger)">Clear All</button>
+        </div>
+    </div>
+</body>
+</html>

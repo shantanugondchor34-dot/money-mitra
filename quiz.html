@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Money Mitra</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="brand">🇮🇳 Money Mitra</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tools.html">Calculators</a>
+            <a href="tracker.html">Tracker</a>
+            <a href="quiz.html" class="active">Quiz</a>
+        </div>
+        <button id="themeToggle" style="width: auto; margin:0; padding: 5px 15px; background:transparent; color:var(--text);">🌓</button>
+    </nav>
+
+    <div class="container">
+        <div class="card" id="quizCard" style="max-width: 700px; margin: 40px auto; position: relative; overflow: hidden;">
+            
+            <div class="quiz-header">
+                <div>
+                    <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">QUESTION</span>
+                    <div style="font-size: 1.2rem; font-weight: 800; color: var(--primary);" id="progressText">1 / 5</div>
+                </div>
+                <div>
+                    <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">SCORE</span>
+                    <div style="font-size: 1.2rem; font-weight: 800; color: var(--success);" id="scoreText">0</div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+
+            <div id="quizContent">
+                <h2 id="qText" class="question-text">Loading Question...</h2>
+                <div id="opts" class="options-grid"></div>
+                
+                <p id="feedback" style="text-align: center; font-weight: bold; height: 20px; margin-top: 15px;"></p>
+                
+                <button id="nextBtn" onclick="nextQuestion()" style="display: none;">Next Question &rarr;</button>
+            </div>
+
+            <div id="resultScreen" style="display: none; text-align: center; padding: 20px;">
+                <div style="font-size: 4rem; margin-bottom: 10px;" id="resultEmoji">🏆</div>
+                <h2 style="margin-bottom: 5px;">Quiz Completed!</h2>
+                <p style="color: var(--text-muted);">You scored <span id="finalScore" style="color: var(--primary); font-weight: 800;"></span> out of <span id="totalQuestions"></span></p>
+                
+                <div class="result-box" id="resultMessage" style="margin: 20px 0; font-size: 1rem; font-weight: 500;">
+                    </div>
+
+                <button onclick="restartQuiz()">🔄 Play Again</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
